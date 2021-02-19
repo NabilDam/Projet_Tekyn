@@ -106,11 +106,11 @@ def insertion_in_lists(new_polygone, new_l_polygones, new_l_ids, index,
         new_l_ids.insert(ref_position, id_polygone.tolist())
     elif type(index) == tuple:
         # Alors l'objet est entre l'indice a et b retourné
-        new_l_polygones.insert(index[1], new_polygone.tolist())
-        new_l_ids.insert(index[1], id_polygone.tolist())
+        new_l_polygones.insert(index[1] + ref_position, new_polygone.tolist())
+        new_l_ids.insert(index[1] + ref_position, id_polygone.tolist())
     else:
-        new_l_polygones.insert(index, new_polygone.tolist())
-        new_l_ids.insert(index, id_polygone.tolist())
+        new_l_polygones.insert(index + ref_position, new_polygone.tolist())
+        new_l_ids.insert(index + ref_position, id_polygone.tolist())
 
     return np.array([new_l_polygones, new_l_ids])
 
